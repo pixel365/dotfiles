@@ -1,0 +1,24 @@
+local opt = vim.opt
+
+opt.number = true           -- Show line numbers
+opt.relativenumber = true   -- Relative numbers make motion easier
+opt.mouse = 'a'             -- Enable mouse support in all modes
+opt.ignorecase = true       -- Ignore case in search by default
+opt.smartcase = true        -- Re-enable case sensitivity if uppercase is used
+opt.softtabstop = 4         -- Editing feels like a 4-space tab stop
+opt.tabstop = 4             -- Visual tab width
+opt.shiftwidth = 4          -- Indent width
+opt.expandtab = true        -- Convert tabs to spaces
+opt.termguicolors = true    -- Enable true color support
+opt.cursorline = true       -- Highlight the current line
+opt.scrolloff = 8           -- Keep 8 lines visible near the window edge
+opt.colorcolumn = "80"      -- Highlight the preferred text width
+opt.list = true             -- Show whitespace markers
+opt.listchars = "tab: ,multispace:|   ,eol:󰌑" -- Symbols for invisible characters
+opt.winborder = "rounded"   -- Use rounded borders for floating windows
+opt.clipboard = "unnamedplus" -- Share the clipboard with the system
+opt.completeopt = { "menu", "menuone", "noselect" } -- Keep completion predictable
+opt.signcolumn = "yes"      -- Prevent text from shifting when signs appear
+opt.splitbelow = true       -- Open horizontal splits below the current window
+opt.splitright = true       -- Open vertical splits to the right
+opt.undofile = true         -- Persist undo history across sessions
