@@ -3,6 +3,18 @@ vim.g.mapleader = " "
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+local function toggle_git_blame()
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+        local buf = vim.api.nvim_win_get_buf(win)
+        if vim.bo[buf].filetype == "fugitiveblame" then
+            vim.api.nvim_win_close(win, true)
+            return
+        end
+    end
+
+    vim.cmd("Git blame")
+end
+
 local function fzf_picker(name)
     return function()
         local ok, fzf = pcall(require, "fzf-lua")
@@ -18,6 +30,13 @@ end
 keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
 keymap("n", "<leader><leader>", fzf_picker("files"), opts)
 keymap("n", "<leader>/", fzf_picker("live_grep"), opts)
+keymap("n", "<leader>b", fzf_picker("buffers"), opts)
+keymap("n", "<leader>.", fzf_picker("oldfiles"), opts)
+keymap("n", "<leader>,", fzf_picker("resume"), opts)
+keymap("n", "<leader>ss", fzf_picker("lsp_document_symbols"), opts)
+keymap("n", "<leader>sS", fzf_picker("lsp_workspace_symbols"), opts)
+keymap("n", "<leader>xx", fzf_picker("diagnostics_workspace"), opts)
+keymap("n", "<leader>gb", toggle_git_blame, opts)
 
 local term_buf = nil
 local term_win = nil

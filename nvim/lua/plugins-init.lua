@@ -11,6 +11,14 @@ vim.pack.add({
 })
 
 vim.pack.add({
+    { src = "https://github.com/lewis6991/gitsigns.nvim" },
+})
+
+vim.pack.add({
+    { src = "https://github.com/tpope/vim-fugitive" },
+})
+
+vim.pack.add({
     { src = "https://github.com/ibhagwan/fzf-lua" },
 })
 
