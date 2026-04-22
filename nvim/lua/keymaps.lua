@@ -69,7 +69,7 @@ keymap("n", "<leader>t", function()
         return
     end
 
-    vim.cmd("botright split | terminal")
+    vim.cmd("botright 20split | terminal")
     term_win = vim.api.nvim_get_current_win()
     term_buf = vim.api.nvim_get_current_buf()
 end, opts)
