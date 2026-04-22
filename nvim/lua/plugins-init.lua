@@ -32,6 +32,7 @@ vim.pack.add({
 
 vim.pack.add({
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 })
 
 vim.pack.add({

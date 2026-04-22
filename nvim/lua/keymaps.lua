@@ -27,6 +27,14 @@ local function fzf_picker(name)
     end
 end
 
+local function duplicate_line()
+    local line = vim.api.nvim_get_current_line()
+    local row = vim.api.nvim_win_get_cursor(0)[1]
+
+    vim.api.nvim_buf_set_lines(0, row, row, false, { line })
+    vim.api.nvim_win_set_cursor(0, { row + 1, 0 })
+end
+
 keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
 keymap("n", "<leader><leader>", fzf_picker("files"), opts)
 keymap("n", "<leader>/", fzf_picker("live_grep"), opts)
@@ -37,6 +45,11 @@ keymap("n", "<leader>ss", fzf_picker("lsp_document_symbols"), opts)
 keymap("n", "<leader>sS", fzf_picker("lsp_workspace_symbols"), opts)
 keymap("n", "<leader>xx", fzf_picker("diagnostics_workspace"), opts)
 keymap("n", "<leader>gb", toggle_git_blame, opts)
+keymap("n", "<A-S-j>", duplicate_line, opts)
+keymap("n", "<A-j>", "<Cmd>move .+1<CR>==", opts)
+keymap("n", "<A-k>", "<Cmd>move .-2<CR>==", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv=gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv=gv", opts)
 
 local term_buf = nil
 local term_win = nil
