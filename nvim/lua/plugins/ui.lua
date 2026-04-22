@@ -4,6 +4,27 @@ require("mason").setup({
     },
 })
 
+require("bufferline").setup({
+    options = {
+        mode = "buffers",
+        diagnostics = "nvim_lsp",
+        always_show_bufferline = true,
+        separator_style = "slant",
+        modified_icon = "●",
+        custom_filter = function(buf)
+            return vim.bo[buf].buftype ~= "terminal"
+        end,
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "Files",
+                text_align = "left",
+                separator = true,
+            },
+        },
+    },
+})
+
 require("lualine").setup({
     options = {
         theme = "tokyonight",

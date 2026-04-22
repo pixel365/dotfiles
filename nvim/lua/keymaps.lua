@@ -35,6 +35,45 @@ local function duplicate_line()
     vim.api.nvim_win_set_cursor(0, { row + 1, 0 })
 end
 
+local function close_file_buffer()
+    local current_buf = vim.api.nvim_get_current_buf()
+    local listed = vim.fn.getbufinfo({ buflisted = 1 })
+    local file_buffers = {}
+
+    for _, buf in ipairs(listed) do
+        if buf.bufnr ~= current_buf
+            and vim.bo[buf.bufnr].buftype == ""
+            and vim.bo[buf.bufnr].filetype ~= "NvimTree" then
+            table.insert(file_buffers, buf.bufnr)
+        end
+    end
+
+    if #file_buffers > 0 then
+        local target = file_buffers[1]
+        for i, bufnr in ipairs(file_buffers) do
+            if bufnr > current_buf then
+                target = bufnr
+                break
+            end
+            if i == #file_buffers then
+                target = file_buffers[#file_buffers]
+            end
+        end
+
+        vim.api.nvim_set_current_buf(target)
+    else
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+            local buf = vim.api.nvim_win_get_buf(win)
+            if vim.bo[buf].filetype == "NvimTree" then
+                vim.api.nvim_set_current_win(win)
+                break
+            end
+        end
+    end
+
+    vim.cmd.bdelete({ args = { tostring(current_buf) } })
+end
+
 keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
 keymap("n", "<leader><leader>", fzf_picker("files"), opts)
 keymap("n", "<leader>/", fzf_picker("live_grep"), opts)
@@ -45,6 +84,9 @@ keymap("n", "<leader>ss", fzf_picker("lsp_document_symbols"), opts)
 keymap("n", "<leader>sS", fzf_picker("lsp_workspace_symbols"), opts)
 keymap("n", "<leader>xx", fzf_picker("diagnostics_workspace"), opts)
 keymap("n", "<leader>gb", toggle_git_blame, opts)
+keymap("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", opts)
+keymap("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", opts)
+keymap("n", "<leader>bd", close_file_buffer, opts)
 keymap("n", "<A-d>", duplicate_line, opts)
 keymap("n", "<A-j>", "<Cmd>move .+1<CR>==", opts)
 keymap("n", "<A-k>", "<Cmd>move .-2<CR>==", opts)

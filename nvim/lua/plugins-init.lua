@@ -11,6 +11,10 @@ vim.pack.add({
 })
 
 vim.pack.add({
+    { src = "https://github.com/akinsho/bufferline.nvim" },
+})
+
+vim.pack.add({
     { src = "https://github.com/lewis6991/gitsigns.nvim" },
 })
 
@@ -20,6 +24,10 @@ vim.pack.add({
 
 vim.pack.add({
     { src = "https://github.com/ibhagwan/fzf-lua" },
+})
+
+vim.pack.add({
+    { src = "https://github.com/windwp/nvim-autopairs" },
 })
 
 vim.pack.add({

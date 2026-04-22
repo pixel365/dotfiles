@@ -12,6 +12,8 @@ Leader: `Space`
 - `<Space>ss` — Symbols in current file
 - `<Space>sS` — Symbols in workspace
 - `<Space>e` — Toggle file tree
+- `<S-h>` / `<S-l>` — Previous / next file tab
+- `<Space>bd` — Close current file buffer
 - `<C-h>` / `<C-j>` / `<C-k>` / `<C-l>` — Move between windows
 - `<Space>v` — Vertical split
 - `<Space>s` — Horizontal split
@@ -25,6 +27,7 @@ Leader: `Space`
 ## LSP
 
 - `gd` — Go to definition
+- `gi` — Go to implementations
 - `gr` — Find references / usages
 - `K` — Hover documentation
 - `<Space>rn` — Rename symbol
@@ -63,6 +66,14 @@ Leader: `Space`
 - `vit` / `vat` — Select inside HTML/XML tag / around tag
 - `vaf` / `vif` — Select outer / inner function
 - `vac` / `vic` — Select outer / inner class or struct
+
+## Folding
+
+- `za` — Toggle fold under cursor
+- `zc` — Close fold under cursor
+- `zo` — Open fold under cursor
+- `zM` — Close all folds
+- `zR` — Open all folds
 
 ## Small Built-ins
 
