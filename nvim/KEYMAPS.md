@@ -9,6 +9,7 @@ Leader: `Space`
 - `<Space>b` — Open buffers
 - `<Space>.` — Recent files
 - `<Space>,` — Resume last `fzf-lua` picker
+- `<Space>p` — Recent projects
 - `<Space>ss` — Symbols in current file
 - `<Space>sS` — Symbols in workspace
 - `<Space>e` — Toggle file tree

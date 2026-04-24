@@ -1,6 +1,7 @@
 require("config")
 require("plugins-init")
 require("keymaps")
+require("recent_projects").setup()
 
 require("plugins.ui")
 require("plugins.git")
