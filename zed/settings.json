@@ -1,0 +1,199 @@
+{
+  "disable_ai": true,
+  "edit_predictions": {
+    "provider": "none"
+  },
+  "project_panel": {
+    "dock": "left",
+    "default_width": 280,
+    "auto_reveal_entries": true,
+    "git_status": true,
+    "show_diagnostics": "all",
+    "bold_folder_labels": false,
+    "entry_spacing": "comfortable",
+    "auto_fold_dirs": true,
+    "indent_guides": {
+      "show": "always"
+    }
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left",
+    "button": false
+  },
+  "git_panel": {
+    "button": true,
+    "dock": "left",
+    "default_width": 360,
+    "status_style": "icon",
+    "fallback_branch_name": "main",
+    "sort_by": "path",
+    "group_by": "status",
+    "collapse_untracked_diff": false,
+    "scrollbar": {
+      "show": null
+    },
+    "starts_open": false
+  },
+  "agent": {
+    "enabled": false
+  },
+  "terminal": {
+    "dock": "right",
+    "default_width": 520,
+    "font_size": 15,
+    "alternate_scroll": "on",
+    "toolbar": {
+      "breadcrumbs": true
+    },
+    "copy_on_select": true
+  },
+  "base_keymap": "JetBrains",
+  "vim_mode": false,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_family": ".ZedMono",
+  "theme": "Ayu Dark",
+  "line_ending": "detect",
+  "buffer_line_height": "comfortable",
+
+  "auto_indent_on_paste": true,
+  "autoscroll_on_clicks": true,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1800
+    }
+  },
+  "auto_signature_help": true,
+
+  "close_on_file_delete": true,
+  "code_lens": "on",
+  "diff_view_style": "split",
+  "cursor_shape": "bar",
+  "ensure_final_newline_on_save": true,
+  "format_on_save": "on",
+  "formatter": "auto",
+  "use_autoclose": true,
+  "use_auto_surround": true,
+  "go_to_definition_fallback": "find_all_references",
+  "go_to_definition_scroll_strategy": "center",
+  "relative_line_numbers": "disabled",
+  "remove_trailing_whitespace_on_save": true,
+  "restore_on_startup": "last_session",
+
+  "auto_install_extensions": {
+    "html": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "toml": true,
+    "helm": true,
+    "sql": true,
+    "json5": true,
+    "log": true,
+    "csv": true,
+    "nginx": true,
+    "golangci-lint": true,
+    "ansible": true,
+    "make": true
+  },
+
+  "file_types": {
+    "Helm": [
+      "**/templates/**/*.tpl",
+      "**/templates/**/*.yaml",
+      "**/templates/**/*.yml",
+      "**/helmfile.d/**/*.yaml",
+      "**/helmfile.d/**/*.yml",
+      "**/values*.yaml"
+    ],
+    "Dockerfile": ["Dockerfile*", "dockerfile*", "*.dockerfile"],
+    "Makefile": ["Makefile"]
+  },
+
+  "minimap": {
+    "show": "auto",
+    "thumb": "hover",
+    "current_line_highlight": "all",
+    "display_in": "active_editor",
+    "max_width_columns": 80,
+    "thumb_border": "full"
+  },
+
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": true,
+    "show_tab_bar_buttons": true
+  },
+
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true,
+    "activate_on_close": "neighbour",
+    "show_diagnostics": "all"
+  },
+
+  "drag_and_drop_selection": {
+    "enabled": true,
+    "delay": 300
+  },
+
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": true,
+    "selections_menu": true,
+    "agent_review": true,
+    "code_actions": true
+  },
+
+  "git": {
+    "blame": {
+      "show_avatar": true
+    },
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 200,
+      "show_commit_summary": true
+    },
+    "branch_picker": {
+      "show_author_name": true
+    },
+    "enable_status": true,
+    "hunk_style": "staged_hollow"
+  },
+
+  "image_viewer": {
+    "unit": "decimal"
+  },
+
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_other_hints": true,
+    "show_background": false
+  },
+
+  "journal": {
+    "hour_format": "hour24"
+  },
+
+  "search": {
+    "button": true,
+    "whole_word": false,
+    "case_sensitive": false,
+    "include_ignored": false
+  },
+
+  "whitespace_map": {
+    "space": "•",
+    "tab": "→"
+  },
+
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  }
+}
+
