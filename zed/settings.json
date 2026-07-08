@@ -82,7 +82,8 @@
   "relative_line_numbers": "disabled",
   "remove_trailing_whitespace_on_save": true,
   "restore_on_startup": "last_session",
-
+  "scroll_beyond_last_line": "off",
+  
   "auto_install_extensions": {
     "html": true,
     "dockerfile": true,
