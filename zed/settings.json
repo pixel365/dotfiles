@@ -101,7 +101,8 @@
     "nginx": true,
     "golangci-lint": true,
     "ansible": true,
-    "make": true
+    "make": true,
+    "dependi": true
   },
 
   "file_types": {
